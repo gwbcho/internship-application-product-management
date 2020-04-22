@@ -1,0 +1,117 @@
+\documentclass[a4paper, 11pt]{article}
+
+% packages being used
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[margin = 1 in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{xspace}
+\usepackage{mhchem}
+\usepackage{tikz}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{color}
+
+% used to write code in Latex
+\lstset{
+language=Java, 
+aboveskip=3mm, 
+belowskip=3mm, 
+showstringspaces=false, 
+numbers=left, 
+columns=flexible, 
+breaklines=true, 
+breakatwhitespace=false, 
+tabsize=3, 
+keywordstyle=\bfseries, 
+captionpos=b, 
+keepspaces=true, 
+numbersep=7pt, 
+showspaces=false, 
+showtabs=false, 
+basicstyle=\ttfamily, 
+identifierstyle=\ttfamily}
+\pagestyle{fancy}
+
+% settings
+\setlength{\parindent}{15pt} % Default is 15pt.
+
+% The answer environment definition.
+\newenvironment{answer}[1]{
+  \subsubsection*{Problem #1}
+}
+
+% Edit these as appropriate.
+\newcommand\name{} %Gregory Cho
+\newcommand\banner{Gregory Cho}      % <-- your banner id
+\newcommand\course{CS 1550}
+\newcommand\semester{Spring 2020}  % <-- current semester
+\newcommand\hwnum{5}               % <-- homework number
+\newcommand\header{Cloudflare PM Challenge}
+% \date{}
+
+% custom commands
+\newcommand{\frc}[2]{$\frac{#1}{#2}$}
+\newcommand{\br}{\vspace{5mm}}
+\renewcommand\qedsymbol{$\blacksquare$}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+
+% create title and author elements
+\title{\header}
+\author{\banner \\ \name} %<-- Banner ID followed by \\ author name(s)
+
+% create headers
+\setlength{\headheight}{13.6pt}
+\lhead{\banner} % <-- Name or Banner ID
+\rhead{\name}
+\chead{\header}
+
+\begin{document}
+\maketitle
+
+\section{Abstract}
+
+The video game industry represents a burgeoning market for cloud computer services with a growing financially capable consumer base [1] driving up revenue across all platforms. Depending on the source, reports indicate that 65 - 70\%  [1] of Americans play some kind of video game with an equivalent number of Americans playing at least one mobile game [2]. Unsurprisingly, several market players are or have been making strides to capitalize on this over \$100 billion industry [1]: Google Stadia recently launched with the hopes of making console and PC gaming something achievable via streaming, Microsoft maintains a large presence in the gaming sector with many in game and console services integrated with their cloud platforms, and mobile app developers, who rely heavily on cloud computing and distributed architectures, are driving significant increases in revenue shares (up to 59\% or over \$50 billion dollars [2]) across nearly 350,000 mobile games.
+
+Cloudflare, with it's content delivery network services and serverless technologies such as Cloudflare Workers, has the unique opportunity to act as a man in the middle ISP or vendor; providing cheap software services such as DDoS mitigation and lightweight serverless functions and applications to clients such as mobile or independent game developers to reduce costs endemic to most cloud services and increase scalability and functionality with minimal engineering effort. 
+
+\section{Market Research}
+
+Many traditional modern video games, when operating in single player, have what is known as a monolithic architecture: one code base, running on one CPU, using client provided computational resources. This allows for developers to package and sell their product relatively easily, as a CD or downloadable resource. This paradigm shifts towards a more distributed architecture for multiplayer games such as MMO games, shooters, LAN capable games, etc. which rely on host servers to connect multiple players and perform numerous operations in parallel. For many established developer studios these servers are handled either in house or through third party vendors (possibly even the clients themselves) with code often written separately from the main game in order to facilitate the different needs of a distributed computing paradigm.
+
+This distributed computing paradigm with online games presents a substantial arbitrage opportunity for Cloudflare. Using Cloudflare Workers, companies could allocate some of the more lightweight operations, such as DDoS mitigation or mircopayment management, to a serverless function running on Cloudflare thereby saving money for dedicated server hosting, a process which can already cost \$1500 per year to host several copies of a game (using AWS costs as an estimate). Where this will provide the most impact is in the mobile and independent video game development community. For mobile games a large portion of their infrastructure is cloud based meaning that serverless components stand to make a greater difference while for independent developers serverless frameworks offers a cost saving utility when compared to running code on dedicated servers. Assuming that online mobile and independent video games divert even 1\% of their annual server budget to Cloudflare Workers would result in a potential revenue stream of \$1.29 billion (assuming 25\% market penetration and using data regarding the video game Evolved provided by Steam [3]).
+
+\section{Future Research}
+
+More research needs to be done to determine a formal cost benefit analysis between Cloudflare's serverless technology compared to already existing services. While AWS and GCP are often more expensive than market alternatives it is important to note that, due to their protracted presence in the industry, their support structure is quite substantial. In addition, it is possible that developers already use similar technologies, even if they were to switch, it is unclear how much effort would be needed to change vendors or if such a measure is necessary at all. These are all topics of investigation that require communication with appropriate stakeholders, something not possible at this time.
+
+\section{Objectives}
+
+The most direct measures of success for this product would be the project's net revenue, adoption rate among the campaign's target demographic, and the price per acquisition for each client. Note that these metrics are similar to the metrics used the measure the efficacy of ad campaigns in the AdX auction mechanism. Reducing the problem to one that is already well studied in Game Theory allows for us to analyze the efficacy of this project using tools and methods which are well understood. 
+
+\section{Risks}
+The primary risk comes from the competition from existing market entities offering similar services. Especially as current game developers already likely use serverless resources provided by AWS or GCP, initial adoption might be slower than is ideal to ensure product solvency. Appropriate pricing models accounting for the highly competitive nature of this market would need to be constructed and long term profitability assessments using net present value models conducted to determine if this is a reasonable investment from a company standpoint. Such assessments would mitigate the risk inherited by the company while maximizing long term rewards. Initial data to develop these models could either be acquired via similar products or a pilot program.
+
+\section{References}
+\begin{enumerate}[1.]
+\item 
+https://techjury.net/stats-about/video-game-demographics
+
+\item
+https://techjury.net/stats-about/mobile-gaming-demographics
+
+\item
+https://store.steampowered.com/stats
+
+
+\end{enumerate}
+
+
+\end{document}
